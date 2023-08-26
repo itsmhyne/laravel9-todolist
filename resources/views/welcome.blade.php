@@ -25,6 +25,14 @@
             background-color: #f0f0f0;
             }
 
+            
+            h1 {
+                font-size: 1.2em;
+                color: #333;
+                text-align: center;
+                padding: 20px;
+                margin: 0;
+            }
             .neumorphic-box {
             width: 200px;
             height: 200px;
@@ -36,15 +44,7 @@
             box-shadow: 8px 8px 16px #d1d1d1, -8px -8px 16px #ffffff;
             margin-right: 50px;
             }
-
-            h1 {
-            font-size: 1.2em;
-            color: #333;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-            }
-
+            
             .emboss-box {
             width: 200px;
             height: 100px;
