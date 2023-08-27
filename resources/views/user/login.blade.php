@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel &mdash; TodoList</title>
+        <title>Laravel &mdash; {{ $title }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,10 +19,10 @@
         <style>
             body {
             font-family: 'Nunito', sans-serif;
-            /* display: flex; */
+            display: flex;
             justify-content: center;
             align-items: center;
-            /* min-height: 100vh; */
+            min-height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
             }
@@ -82,11 +82,13 @@
     </head>
     <body>
         <div class="container neumorphic-box col-xl-10 col-xxl-8 px-5 py-5">
+            @if (isset($error))
             <div class="row g-lg-5 px-5">
                 <div class="alert alert-danger" role="alert">
-                    A simple primary alert—check it out!
+                    {{ $error }}
                 </div>
             </div>
+            @endif
             <div class="row align-items-center g-lg-5 py-5">
                 <div class="col-lg-7 text-center text-lg-start">
                     <h1 class="display-4 fw-bold lh-1 mb-3">Login</h1>
@@ -94,6 +96,7 @@
                 </div>
                 <div class="col-md-10 mx-auto col-lg-5">
                     <form class="p-4 p-md-5 bevel-box" method="post" action="/login">
+                        @csrf
                         <div class="form-floating mb-3">
                             <input name="user" type="text" class="emboss-box w-100" id="user" placeholder="User">
                         </div>
@@ -102,57 +105,6 @@
                         </div>
                         <button class="w-100 bevel-btn text-primary fw bevel-btn text-primary fw-bold-bold" type="submit">Sign In</button>
                     </form>
-                </div>
-            </div>
-        </div>
-        <div class="container neumorphic-box col-xl-10 col-xxl-8 px-5 py-5">
-            <div class="row g-lg-5 px-5">
-                <div class="alert alert-danger" role="alert">
-                    A simple primary alert—check it out!
-                </div>
-            </div>
-            <div class="row g-lg-5 px-4">
-                <form method="post" action="/logout">
-                    <button class="w-15 bevel-btn text-danger fw-bold" type="submit">Sign Out</button>
-                </form>
-            </div>
-            <div class="row align-items-center g-lg-5 py-5">
-                <div class="col-lg-7 text-center text-lg-start">
-                    <h1 class="display-4 fw-bold lh-1 mb-3">Todolist</h1>
-                    <p class="col-lg-10 fs-4">by <a target="_blank" href="https://www.github.com/itsmhyne">M. Hamdan Yusuf</a></p>
-                </div>
-                <div class="col-md-10 mx-auto col-lg-5">
-                    <form class="p-4 p-md-5 bevel-box" method="post" action="/todolist">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="emboss-box w-100" name="todo" placeholder="todo">
-                        </div>
-                        <button class="w-100 bevel-btn text-primary fw-bold" type="submit">Add Todo</button>
-                    </form>
-                </div>
-            </div>
-            <div class="row align-items-right g-lg-5 py-5">
-                <div class="mx-auto">
-                    <form id="deleteForm" method="post" style="display: none">
-        
-                    </form>
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Todo</th>
-                            <th scope="col"></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Belajar Laravel Dasar</td>
-                            <td>
-                                <button class="w-100 bevel-btn text-danger fw-bold" type="submit">Remove</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
