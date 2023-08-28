@@ -190,6 +190,7 @@ return [
          * Application Service Providers...
          */
         App\Providers\UserServiceProvider::class,
+        \App\Providers\TodoListServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
