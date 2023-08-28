@@ -8,16 +8,20 @@ use Illuminate\Support\Facades\Session;
 class TodoListServiceImpl implements TodoListService
 {
 
-    function saveTodo(string $id, string $todo) : void 
+    public function saveTodo(string $id, string $todo) : void 
     {
         if (!Session::exists("todolist")) {
-            $request->session()->put('todolist', []);
+            Session()->put('todolist', []);
         }
 
         Session()->push('todolist', [
             "id" => $id,
             "todo" => $todo
         ]);
+    }
+
+    public function getTodoList() : array {
+        return Session::get("todolist", []);
     }
 }
 
