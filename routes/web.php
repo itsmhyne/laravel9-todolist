@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\OnlyGuestMiddleware;
 use App\Http\Middleware\OnlyMemberMiddleware;
@@ -15,13 +16,8 @@ use App\Http\Middleware\OnlyMemberMiddleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
+Route::get('/', [HomeController::class, 'home']);
 Route::view('/template', 'template');
-Route::view('/', 'mytemplate');
 
 // login
 Route::controller(UserController::class)->group(function () {
