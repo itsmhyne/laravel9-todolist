@@ -87,30 +87,6 @@
                     A simple primary alert—check it out!
                 </div>
             </div>
-            <div class="row align-items-center g-lg-5 py-5">
-                <div class="col-lg-7 text-center text-lg-start">
-                    <h1 class="display-4 fw-bold lh-1 mb-3">Login</h1>
-                    <p class="col-lg-10 fs-4">by <a target="_blank" href="https://www.github.com/itsmhyne">M. Hamdan Yusuf</a></p>
-                </div>
-                <div class="col-md-10 mx-auto col-lg-5">
-                    <form class="p-4 p-md-5 bevel-box" method="post" action="/login">
-                        <div class="form-floating mb-3">
-                            <input name="user" type="text" class="emboss-box w-100" id="user" placeholder="User">
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input name="password" type="password" class="emboss-box w-100" id="password" placeholder="password">
-                        </div>
-                        <button class="w-100 bevel-btn text-primary fw bevel-btn text-primary fw-bold-bold" type="submit">Sign In</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="container neumorphic-box col-xl-10 col-xxl-8 px-5 py-5">
-            <div class="row g-lg-5 px-5">
-                <div class="alert alert-danger" role="alert">
-                    A simple primary alert—check it out!
-                </div>
-            </div>
             <div class="row g-lg-5 px-4">
                 <form method="post" action="/logout">
                     <button class="w-15 bevel-btn text-danger fw-bold" type="submit">Sign Out</button>
