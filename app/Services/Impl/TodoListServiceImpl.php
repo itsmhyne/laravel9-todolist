@@ -3,23 +3,21 @@
 namespace App\Services\Impl;
 
 use App\Services\TodoListService;
+use Illuminate\Support\Facades\Session;
 
 class TodoListServiceImpl implements TodoListService
 {
 
-    private array $users = [
-        "itsmhyne" => "password",
-        "admin" => "password",
-    ];
-
-    function login(string $user, string $password) : bool 
+    function saveTodo(string $id, string $todo) : void 
     {
-        if (!isset($this->users[$user])) {
-            return false;
+        if (!Session::exists("todolist")) {
+            $request->session()->put('todolist', []);
         }
 
-        $correctPassword = $this->users[$user];
-        return $password == $correctPassword;
+        Session()->push('todolist', [
+            "id" => $id,
+            "todo" => $todo
+        ]);
     }
 }
 
