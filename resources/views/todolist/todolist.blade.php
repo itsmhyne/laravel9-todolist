@@ -129,7 +129,10 @@
                                 <th scope="row">{{ $todo['id'] }}</th>
                                 <td>{{ $todo['todo'] }}</td>
                                 <td>
-                                    <button class="w-100 bevel-btn text-danger fw-bold" type="submit">Remove</button>
+                                    <form action="/todolist/{{ $todo['id'] }}/delete" method="post">
+                                        @csrf
+                                        <button class="w-100 bevel-btn text-danger fw-bold" type="submit">Remove</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
